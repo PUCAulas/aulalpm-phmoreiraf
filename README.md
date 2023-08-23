@@ -1,17 +1,19 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11537395&assignment_repo_type=AssignmentRepo)
 # Nome do projeto
-Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
+Controle de Aluguéis de Equipamentos
+Descrição do projeto: 
+O projeto intitulado "Controle de Aluguel de Equipamentos" possui como principal objetivo a modernização do sistema de aluguéis de uma empresa voltada à oferta de equipamentos para o setor da construção civil.
+
+O sistema assume a habilidade de efetuar o registro de novos aluguéis, com a capacidade de calcular e exibir automaticamente o montante total do aluguel, dependendo da duração selecionada em dias, para cada entrada. Ademais, o sistema possibilitará a consulta de aluguéis presentes e passados por parte de um cliente específico, enquanto também permitirá a elaboração de um relatório mensal abarcando a enumeração de todos os aluguéis realizados no mês, incluindo o faturamento total.
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 4
-* Nome completo do aluno 4
+* Júlia Borges Araújo Silva 
+* Arthur Capanema Bretas Gabriel
+* Gabriel Vitor de Oliveira Morais
+* Pedro Henrique Moreira Caixeta Ferreira
+
 
 ## Professor responsável 
 
-* Nome completo do professor 1
-
+Johnatan Alves de Oliveira
