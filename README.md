@@ -3,7 +3,7 @@
 
 Descrição do projeto: 
 
-O projeto intitulado "Controle de Aluguel de Equipamentos" possui como principal objetivo a modernização do sistema de aluguéis de uma empresa voltada à oferta de equipamentos para o setor da construção civil.
+O projeto intitulado "Controle de Aluguéis de Equipamentos" possui como principal objetivo a modernização do sistema de aluguéis de uma empresa voltada à oferta de equipamentos para o setor da construção civil.
 
 O sistema assume a habilidade de efetuar o registro de novos aluguéis, com a capacidade de calcular e exibir automaticamente o montante total do aluguel, dependendo da duração selecionada em dias, para cada entrada. Ademais, o sistema possibilitará a consulta de aluguéis presentes e passados por parte de um cliente específico, enquanto também permitirá a elaboração de um relatório mensal abarcando a enumeração de todos os aluguéis realizados no mês, incluindo o faturamento total.
 
