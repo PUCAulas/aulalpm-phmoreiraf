@@ -39,3 +39,37 @@ class AluguelTest {
             e.printStackTrace();
         }
     }
+
+      //COMMIT GABRIEL
+     
+     @Test
+     public void testConsultarReceitaMensal() {
+         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+         try {
+             Date data1 = dateFormat.parse("01/09/2023");
+             Date data2 = dateFormat.parse("15/10/2023");
+             Date data3 = dateFormat.parse("01/11/2023");
+ 
+             // Registra aluguéis em setembro e outubro
+             cliente.registrarAluguel(cliente, equipamento, data1, data1);
+             cliente.registrarAluguel(cliente, equipamento, data1, data2);
+             cliente.registrarAluguel(cliente, equipamento, data2, data3);
+ 
+             // Consulta a receita para setembro (mês 9)
+             double receitaSetembro = cliente.consultarReceitaMensal(9);
+             assertEquals(6700.0, receitaSetembro, 0.01);
+ 
+             // Consulta a receita para outubro (mês 10)
+             double receitaOutubro = cliente.consultarReceitaMensal(10);
+             assertEquals(1700.0, receitaOutubro, 0.01);
+ 
+             // Consulta a receita para um mês sem aluguéis (mês 11)
+             double receitaNovembro = cliente.consultarReceitaMensal(11);
+             assertEquals(0.0, receitaNovembro, 0.01);
+ 
+         } catch (ParseException e) {
+             e.printStackTrace();
+         }
+     }
+ }
+
