@@ -47,4 +47,16 @@ public class Cliente {
         return aluguel;
     }
 
+    public double consultarReceitaMensal(int mes) {
+            double receitaMensal = 0.0;
+            for (Aluguel aluguel : alugueis) {
+                int mesAluguel = aluguel.getDataInicio().getMonth() + 1; // +1 porque os meses em Date começam em 0
+                if (mesAluguel == mes) {
+                    receitaMensal += aluguel.calcularValorTotal();
+                }
+            }
+            return receitaMensal;
+        }
+    
+
 }
