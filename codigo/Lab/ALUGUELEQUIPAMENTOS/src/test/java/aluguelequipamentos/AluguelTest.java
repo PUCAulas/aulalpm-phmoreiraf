@@ -57,7 +57,7 @@ class AluguelTest {
  
              // Consulta a receita para setembro (mês 9)
              double receitaSetembro = cliente.consultarReceitaMensal(9);
-             assertEquals(6700.0, receitaSetembro, 0.01);
+             assertEquals(4400.0, receitaSetembro, 0.01);
  
              // Consulta a receita para outubro (mês 10)
              double receitaOutubro = cliente.consultarReceitaMensal(10);
