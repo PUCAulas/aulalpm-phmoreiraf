@@ -32,4 +32,19 @@ public class Cliente {
         return id;
     }
 
+        public void setAlugueis(List<Aluguel> alugueis) {
+        this.alugueis = alugueis;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientesCad = clientes;
+    }
+    
+        public Aluguel registrarAluguel(Cliente nomeCliente, Equipamento equipamento, Date inicio, Date fim) {
+
+        Aluguel aluguel = new Aluguel(nomeCliente, equipamento, inicio, fim);
+        alugueis.add(aluguel);
+        return aluguel;
+    }
+
 }
