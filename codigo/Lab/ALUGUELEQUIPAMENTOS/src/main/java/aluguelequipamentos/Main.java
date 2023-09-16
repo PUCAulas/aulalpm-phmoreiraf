@@ -38,10 +38,46 @@ public class Main {
             switch (escolha) {
                 case 1:
 
+                    System.out.println("Digite o nome do cliente:");
+                    scanner.nextLine(); // Limpar a quebra de linha pendente
+                    String nomeCliente = scanner.nextLine();
+                    cliente = new Cliente(nomeCliente);
+                    System.out.println("Cliente registrado com sucesso: " + nomeCliente);
                     break;
 
                 case 2:
+                     if (cliente == null) {
+                        System.out.println("Por favor, registre um cliente primeiro.");
+                        break;
+                    }
 
+                    System.out.println("Digite a data de início (dd/MM/yyyy):");
+                    Date dataInicio = dateFormat.parse(scanner.next());
+
+                    System.out.println("Digite a data de término (dd/MM/yyyy):");
+                    Date dataFim = dateFormat.parse(scanner.next());
+
+                    System.out.println("Digite o código do equipamento:");
+                    int codigoEquipamento = scanner.nextInt();
+
+                    System.out.println("Digite a descrição do equipamento:");
+                    scanner.nextLine(); // Limpar a quebra de linha pendente
+                    String descricaoEquipamento = scanner.nextLine();
+
+                    System.out.println("Digite o valor diário do equipamento:");
+                    double valorDiarioEquipamento = scanner.nextDouble();
+
+                    Equipamento equipamento = new Equipamento(codigoEquipamento, descricaoEquipamento,
+                            valorDiarioEquipamento);
+
+                    aluguel = cliente.registrarAluguel(cliente, equipamento, dataInicio, dataFim);
+
+                    if (aluguel != null) {
+                        System.out.println("Aluguel registrado com sucesso.");
+                        System.out.println("Valor total do aluguel: " + aluguel.calcularValorTotal());
+                    } else {
+                        System.out.println("Erro ao registrar o aluguel.");
+                    }
                     break;
                 case 3:
 
