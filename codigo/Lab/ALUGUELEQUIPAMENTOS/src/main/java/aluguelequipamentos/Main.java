@@ -93,6 +93,16 @@ public class Main {
 
                     break;
                 case 5:
+                    System.out.println("Digite o mês para gerar o relatório mensal:");
+                int mesRelatorio = scanner.nextInt();
+
+                double faturamentoTotal = 0.0;
+                for (Cliente cliente : clientesCad) {
+                    double faturamentoMensal = cliente.gerarRelatorioMensal(mesRelatorio);
+                    faturamentoTotal += faturamentoMensal;
+                    System.out.println("Faturamento mensal de " + cliente.getNome() + " no mês " + mesRelatorio + ": " + faturamentoMensal);
+                }
+                System.out.println("Faturamento total no mês " + mesRelatorio + ": " + faturamentoTotal);
                     break;
                 default:
                     System.out.println("Opcao invalida");
