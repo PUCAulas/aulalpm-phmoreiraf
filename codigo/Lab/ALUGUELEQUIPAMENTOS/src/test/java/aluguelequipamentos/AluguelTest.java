@@ -18,9 +18,10 @@ class AluguelTest {
         cliente = new Cliente("Pedro");
         equipamento = new Equipamento(1, "Escavadeira", 100.0);
     }
-    //COMMIT PEDRO
 
-   @Test
+    //COMMIT PEDRO
+    
+    @Test
     public void testRegistrarAluguelEConsultarValorTotal() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try {
@@ -39,6 +40,7 @@ class AluguelTest {
             e.printStackTrace();
         }
     }
+
 
       //COMMIT GABRIEL
      
