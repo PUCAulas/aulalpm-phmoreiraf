@@ -17,24 +17,24 @@ class AluguelTest {
     public void setUp() {
         cliente = new Cliente("Pedro");
         equipamento = new Equipamento(1, "Escavadeira", 100.0);
-        new Aluguel(cliente, equipamento, new Date(), new Date());
     }
-
     //COMMIT PEDRO
 
-    @Test
+   @Test
     public void testRegistrarAluguelEConsultarValorTotal() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try {
             Date dataInicio = dateFormat.parse("01/09/2023");
             Date dataFim = dateFormat.parse("10/09/2023");
 
-            Aluguel aluguel = cliente.registrarAluguel(cliente, equipamento, dataInicio, dataFim);
+            cliente.registrarAluguel(equipamento, dataInicio, dataFim);
 
-            //double valorEsperado = 100 * 10; // 100 reais por dia, 10 dias de aluguel
+            // Consulta o aluguel registrado
+            Aluguel aluguel = cliente.getAlugueis().get(0);
+
+            // Verifica o valor total do aluguel
             double valorCalculado = aluguel.calcularValorTotal();
-
-            assertEquals(900, valorCalculado, 0.01);
+            assertEquals(900.0, valorCalculado, 0.01);
         } catch (ParseException e) {
             e.printStackTrace();
         }
