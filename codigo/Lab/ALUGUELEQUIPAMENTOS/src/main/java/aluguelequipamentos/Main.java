@@ -2,6 +2,7 @@ package aluguelequipamentos;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 //import java.util.ArrayList;
 //import java.util.ArrayList;
 import java.util.Date;
@@ -9,7 +10,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws ParseException {
+        Scanner scanner = new Scanner(System.in);
         int idCliente = 0;
         //int idClienteAtual = 0;
         Cliente novoCliente = null;
