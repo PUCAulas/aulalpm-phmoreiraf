@@ -11,7 +11,7 @@ Classe com os casos de teste: AluguelTest.java
 
 Segue o passo a passo de utilização:
 
-1 - 
+1 - Selecionar 
 2 - 
 3- 
 4 - 
