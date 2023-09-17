@@ -96,9 +96,21 @@ public class Main {
                     System.out.println("Opcao invalida");
                     scanner.close();
                     break;
-
             }
+            
+            System.out.println("Escolha uma opção");
+            System.out.println("1- Registrar Cliente");
+            System.out.println("2- Registrar Aluguel");
+            System.out.println("3- Consulta de alugueis passados");
+            System.out.println("4- Consulta de alugueis atuais");
+            System.out.println("5- Relatório mensal");
+            System.out.println("0- Sair");
+
+            escolha = scanner.nextInt();
         }
+
+        scanner.close();
+
     }
 }
 
