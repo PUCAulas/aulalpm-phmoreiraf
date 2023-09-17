@@ -57,6 +57,17 @@ public class Cliente {
             }
             return receitaMensal;
         }
-    
+
+    public double gerarRelatorioMensal(int mes) {
+        double faturamentoMensal = 0.0;
+        for (Aluguel aluguel : alugueis) {
+            Date dataInicio = aluguel.getDataInicio();
+            if (dataInicio.getMonth() == mes - 1) { // O mês começa em 0, então subtrai 1
+                faturamentoMensal += aluguel.calcularValorTotal();
+            }
+        }
+        return faturamentoMensal;
+
+    }
 
 }
