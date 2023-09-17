@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) throws ParseException {
         Scanner scanner = new Scanner(System.in);
         int idCliente = 0;
-        //int idClienteAtual = 0;
+        // int idClienteAtual = 0;
         Cliente novoCliente = null;
         // Aluguel aluguel = null;
         List<Cliente> clientesCad = new ArrayList<>();
@@ -37,6 +37,7 @@ public class Main {
                     System.out.println("Digite o nome do cliente:");
                     scanner.nextLine(); // Limpar a quebra de linha pendente
                     String nomeCliente = scanner.nextLine();
+                    scanner.nextLine();
                     novoCliente = new Cliente(nomeCliente);
                     clientesCad.add(novoCliente); // Adiciona o cliente à lista de clientes cadastrados
                     System.out.println("Cliente registrado com sucesso: " + nomeCliente);
