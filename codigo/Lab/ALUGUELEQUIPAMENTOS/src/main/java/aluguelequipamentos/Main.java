@@ -109,6 +109,7 @@ public class Main {
             System.out.println("0- Sair");
 
             escolha = scanner.nextInt();
+            scanner.nextLine();
         }
 
         scanner.close();
