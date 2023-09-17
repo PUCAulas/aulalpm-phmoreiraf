@@ -71,5 +71,31 @@ class AluguelTest {
              e.printStackTrace();
          }
      }
+
+    //COMMIT ARTHUR
+    @Test
+    public void testGerarRelatorioMensal() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date data1 = dateFormat.parse("01/09/2023");
+            Date data2 = dateFormat.parse("15/09/2023");
+            Date data3 = dateFormat.parse("01/10/2023");
+
+            // Registra aluguéis em setembro e outubro
+            cliente.registrarAluguel(cliente, equipamento, data1, data2);
+            cliente.registrarAluguel(cliente, equipamento, data2, data3);
+
+            // Gera relatório para setembro (mês 9)
+            double faturamentoSetembro = cliente.gerarRelatorioMensal(9);
+            assertEquals(8300.0, faturamentoSetembro, 0.01);
+
+            // Gera relatório para outubro (mês 10)
+            double faturamentoOutubro = cliente.gerarRelatorioMensal(10);
+            assertEquals(1700.0, faturamentoOutubro, 0.01);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+    
  }
 
