@@ -9,7 +9,6 @@ public class Cliente {
     private int id;
     private String nome;
     private List<Aluguel> alugueis = new ArrayList<>();
-    private List<Cliente> clientesCad = new ArrayList<>();
 
     public Cliente(String nome) {
         this.id = proximoID++;
@@ -32,19 +31,17 @@ public class Cliente {
         return id;
     }
 
-        public void setAlugueis(List<Aluguel> alugueis) {
+    public void setAlugueis(List<Aluguel> alugueis) {
         this.alugueis = alugueis;
     }
 
-    public void setClientes(List<Cliente> clientes) {
-        this.clientesCad = clientes;
+    public List<Aluguel> getAlugueis() {
+        return alugueis;
     }
     
-        public Aluguel registrarAluguel(Cliente nomeCliente, Equipamento equipamento, Date inicio, Date fim) {
-
-        Aluguel aluguel = new Aluguel(nomeCliente, equipamento, inicio, fim);
+    public void registrarAluguel(Equipamento equipamento, Date inicio, Date fim) {
+        Aluguel aluguel = new Aluguel(this, equipamento, inicio, fim);
         alugueis.add(aluguel);
-        return aluguel;
     }
 
     public double consultarReceitaMensal(int mes) {
@@ -69,5 +66,4 @@ public class Cliente {
         return faturamentoMensal;
 
     }
-
 }
