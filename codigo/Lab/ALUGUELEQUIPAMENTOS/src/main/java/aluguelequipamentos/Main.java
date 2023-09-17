@@ -64,20 +64,19 @@ public class Main {
                     if (clienteSelecionado != null) {
                         System.out.println("Digite a data de início (dd/MM/yyyy):");
                         Date dataInicio = dateFormat.parse(scanner.next());
-
+                        scanner.nextLine();
                         System.out.println("Digite a data de término (dd/MM/yyyy):");
                         Date dataFim = dateFormat.parse(scanner.next());
-
+                        scanner.nextLine();
                         System.out.println("Digite o código do equipamento:");
                         int codigoEquipamento = scanner.nextInt();
-
+                        scanner.nextLine();
                         System.out.println("Digite a descrição do equipamento:");
-                        scanner.nextLine(); // Limpar a quebra de linha pendente
                         String descricaoEquipamento = scanner.nextLine();
-
+                        scanner.nextLine();
                         System.out.println("Digite o valor diário do equipamento:");
                         double valorDiarioEquipamento = scanner.nextDouble();
-
+                        scanner.nextLine();
                         Equipamento equipamento = new Equipamento(codigoEquipamento, descricaoEquipamento,
                                 valorDiarioEquipamento);
 
