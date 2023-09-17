@@ -6,8 +6,7 @@ import java.util.Date;
 //import java.util.List;
 
 public class Aluguel {
-    private Cliente nome;
-    private Cliente id;
+    private Cliente cliente;
     private Equipamento equipamento;
     private Date dataInicio;
     private Date dataFim;
@@ -24,8 +23,8 @@ public class Aluguel {
         this.dataInicio = dataInicio;
     }
 
-    public Aluguel(Cliente nome, Equipamento equipamento, Date dataInicio, Date dataFim) {
-        this.nome = nome;
+    public Aluguel(Cliente cliente, Equipamento equipamento, Date dataInicio, Date dataFim) {
+        this.cliente = cliente;
         this.equipamento = equipamento;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -35,12 +34,8 @@ public class Aluguel {
         return equipamento;
     }
 
-    public Cliente getNome() {
-        return nome;
-    }
-
-    public Cliente getID() {
-        return id;
+    public Cliente getCliente() {
+        return cliente;
     }
 
     public Date getDataInicio() {
@@ -51,7 +46,7 @@ public class Aluguel {
         return dataFim;
     }
 
-     public double calcularValorTotal() {
+    public double calcularValorTotal() {
         long diffInDays = (dataFim.getTime() - dataInicio.getTime()) / (1000 * 60 * 60 * 24);
         return diffInDays * equipamento.getValorDiario();
     }
@@ -62,5 +57,4 @@ public class Aluguel {
         return "Equipamento: " + equipamento.getDescricao() + ", Data Início: " + dateFormat.format(dataInicio)
                 + ", Data Fim: " + dateFormat.format(dataFim) + ", Valor Total: " + calcularValorTotal();
     }
-
 }
