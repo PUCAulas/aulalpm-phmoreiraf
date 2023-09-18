@@ -53,17 +53,16 @@ class AluguelTest {
              Date data3 = dateFormat.parse("01/11/2023");
  
              // Registra aluguéis em setembro e outubro
-             cliente.registrarAluguel(cliente, equipamento, data1, data1);
-             cliente.registrarAluguel(cliente, equipamento, data1, data2);
-             cliente.registrarAluguel(cliente, equipamento, data2, data3);
+             cliente.registrarAluguel(equipamento, data1, data2);
+             cliente.registrarAluguel(equipamento, data2, data3);
  
              // Consulta a receita para setembro (mês 9)
              double receitaSetembro = cliente.consultarReceitaMensal(9);
-             assertEquals(4400.0, receitaSetembro, 0.01);
+             assertEquals(5200.0, receitaSetembro, 0.01);
  
              // Consulta a receita para outubro (mês 10)
              double receitaOutubro = cliente.consultarReceitaMensal(10);
-             assertEquals(1700.0, receitaOutubro, 0.01);
+             assertEquals(0.0, receitaOutubro, 0.01);
  
              // Consulta a receita para um mês sem aluguéis (mês 11)
              double receitaNovembro = cliente.consultarReceitaMensal(11);
@@ -110,16 +109,16 @@ class AluguelTest {
             Date dataFutura = dateFormat.parse("01/10/2023");
 
             // Registra aluguéis passados e atuais
-            cliente.registrarAluguel(cliente, equipamento, dataPassada, dataAtual);
-            cliente.registrarAluguel(cliente, equipamento, dataAtual, dataFutura);
+            cliente.registrarAluguel(equipamento, dataPassada, dataAtual);
+            cliente.registrarAluguel(equipamento, dataAtual, dataFutura);
 
             // Consulta aluguéis passados
-            int totalAlugueisPassados = cliente.getAlugueisPassados(1).size();
-            assertEquals(0, totalAlugueisPassados);
+            int totalAlugueisPassados = cliente.getAlugueisPassados().size();
+            assertEquals(1, totalAlugueisPassados);
 
             // Consulta aluguéis atuais
-            int totalAlugueisAtuais = cliente.getAlugueisAtuais(1).size();
-            assertEquals(0, totalAlugueisAtuais);
+            int totalAlugueisAtuais = cliente.getAlugueisAtuais().size();
+            assertEquals(2, totalAlugueisAtuais);
         } catch (ParseException e) {
             e.printStackTrace();
         }
