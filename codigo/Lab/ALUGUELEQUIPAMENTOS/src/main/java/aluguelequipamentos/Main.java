@@ -103,11 +103,18 @@ public class Main {
                     break;
                 case 4:
                      // Consulta de aluguéis atuais
-                    idClienteAtual = scanner.nextInt();
-                    List<Aluguel> alugueisAtuais = cliente.getAlugueisAtuais(idClienteAtual);
-                    for (Aluguel atual : alugueisAtuais) {
-                        System.out.println("Aluguel atual: " + atual.toString());
+                   System.out.println("Digite o ID do cliente para consultar os aluguéis atuais:");
+                int idClienteAtuais = scanner.nextInt();
+
+                for (Cliente cliente : clientesCad) {
+                    if (cliente.getID() == idClienteAtuais) {
+                        List<Aluguel> alugueisAtuais = cliente.getAlugueisAtuais();
+                        System.out.println("Aluguéis atuais do cliente " + cliente.getNome() + ":");
+                        for (Aluguel aluguel : alugueisAtuais) {
+                            System.out.println(aluguel.toString());
+                        }
                     }
+                }
                     break;
                 case 5:
                     System.out.println("Digite o mês para gerar o relatório mensal:");
