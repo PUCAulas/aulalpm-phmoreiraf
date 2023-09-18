@@ -87,7 +87,19 @@ public class Main {
 
                     break;
                 case 3:
+                    System.out.println("Digite o ID do cliente para consultar os aluguéis passados:");
+                    int idClientePassados = scanner.nextInt();
 
+                    for (Cliente cliente : clientesCad) {
+                        if (cliente.getID() == idClientePassados) {
+                            List<Aluguel> alugueisPassados = cliente.getAlugueisPassados();
+                            System.out.println("Aluguéis passados do cliente " + cliente.getNome() + ":");
+                            for (Aluguel aluguel : alugueisPassados) {
+                                System.out.println(aluguel.toString());
+                            }
+                        }
+                    }
+                    
                     break;
                 case 4:
                      // Consulta de aluguéis atuais
