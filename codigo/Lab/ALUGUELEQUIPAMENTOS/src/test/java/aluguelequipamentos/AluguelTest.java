@@ -100,5 +100,30 @@ class AluguelTest {
         }
     }
     
+    //COMMIT JULIA
+    @Test
+    public void testConsultarAlugueisPassadosEAtuais() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date dataAtual = new Date();
+            Date dataPassada = dateFormat.parse("01/08/2023");
+            Date dataFutura = dateFormat.parse("01/10/2023");
+
+            // Registra aluguéis passados e atuais
+            cliente.registrarAluguel(cliente, equipamento, dataPassada, dataAtual);
+            cliente.registrarAluguel(cliente, equipamento, dataAtual, dataFutura);
+
+            // Consulta aluguéis passados
+            int totalAlugueisPassados = cliente.getAlugueisPassados(1).size();
+            assertEquals(0, totalAlugueisPassados);
+
+            // Consulta aluguéis atuais
+            int totalAlugueisAtuais = cliente.getAlugueisAtuais(1).size();
+            assertEquals(0, totalAlugueisAtuais);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
  }
 
