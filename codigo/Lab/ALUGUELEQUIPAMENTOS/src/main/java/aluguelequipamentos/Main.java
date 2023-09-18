@@ -90,7 +90,12 @@ public class Main {
 
                     break;
                 case 4:
-
+                     // Consulta de aluguéis atuais
+                    idClienteAtual = scanner.nextInt();
+                    List<Aluguel> alugueisAtuais = cliente.getAlugueisAtuais(idClienteAtual);
+                    for (Aluguel atual : alugueisAtuais) {
+                        System.out.println("Aluguel atual: " + atual.toString());
+                    }
                     break;
                 case 5:
                     System.out.println("Digite o mês para gerar o relatório mensal:");
