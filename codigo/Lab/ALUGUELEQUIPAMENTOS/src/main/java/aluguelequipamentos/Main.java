@@ -3,8 +3,6 @@ package aluguelequipamentos;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-//import java.util.ArrayList;
-//import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -89,7 +87,7 @@ public class Main {
                 case 3:
                     System.out.println("Digite o ID do cliente para consultar os aluguéis passados:");
                     int idClientePassados = scanner.nextInt();
-
+                    scanner.nextLine();
                     for (Cliente cliente : clientesCad) {
                         if (cliente.getID() == idClientePassados) {
                             List<Aluguel> alugueisPassados = cliente.getAlugueisPassados();
@@ -103,9 +101,9 @@ public class Main {
                     break;
                 case 4:
                      // Consulta de aluguéis atuais
-                   System.out.println("Digite o ID do cliente para consultar os aluguéis atuais:");
+                System.out.println("Digite o ID do cliente para consultar os aluguéis atuais:");
                 int idClienteAtuais = scanner.nextInt();
-
+                scanner.nextLine();
                 for (Cliente cliente : clientesCad) {
                     if (cliente.getID() == idClienteAtuais) {
                         List<Aluguel> alugueisAtuais = cliente.getAlugueisAtuais();
@@ -119,7 +117,7 @@ public class Main {
                 case 5:
                     System.out.println("Digite o mês para gerar o relatório mensal:");
                 int mesRelatorio = scanner.nextInt();
-
+                scanner.nextLine();
                 double faturamentoTotal = 0.0;
                 for (Cliente cliente : clientesCad) {
                     double faturamentoMensal = cliente.gerarRelatorioMensal(mesRelatorio);
@@ -134,7 +132,7 @@ public class Main {
                     break;
             }
             
-            System.out.println("Escolha uma opção");
+            System.out.println("Escolha outra opção");
             System.out.println("1- Registrar Cliente");
             System.out.println("2- Registrar Aluguel");
             System.out.println("3- Consulta de alugueis passados");
