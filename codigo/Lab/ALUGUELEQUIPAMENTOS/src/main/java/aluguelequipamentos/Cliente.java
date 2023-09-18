@@ -54,6 +54,17 @@ public class Cliente {
             }
             return receitaMensal;
         }
+        public List<Aluguel> getAlugueisAtuais() {
+        List<Aluguel> atuais = new ArrayList<>();
+        Date dataAtual = new Date();
+
+        for (Aluguel aluguel : alugueis) {
+            if (!aluguel.getDataFim().before(dataAtual)) {
+                atuais.add(aluguel);
+            }
+        }
+        return atuais;
+    }
 
      public List<Aluguel> getAlugueisPassados() {
         List<Aluguel> passados = new ArrayList<>();
@@ -67,17 +78,7 @@ public class Cliente {
         return passados;
     }
 
-    public List<Aluguel> getAlugueisAtuais() {
-        List<Aluguel> atuais = new ArrayList<>();
-        Date dataAtual = new Date();
 
-        for (Aluguel aluguel : alugueis) {
-            if (!aluguel.getDataFim().before(dataAtual)) {
-                atuais.add(aluguel);
-            }
-        }
-        return atuais;
-    }
 
     public double gerarRelatorioMensal(int mes) {
         double faturamentoMensal = 0.0;
